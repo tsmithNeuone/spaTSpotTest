@@ -1,0 +1,27 @@
+<div id="splash_logo_tru" class="splash_logo">
+	Tru
+</div>
+<div id="splash_logo_spot" class="splash_logo">
+	Spot
+</div>
+<div id="center_search_fields">
+
+	<%= form_tag("main_search", :id=> "main_search", remote: true, method: "get") do %>
+	<div class="label">
+		<%= label_tag(:vendor_type, "Category:", :id => "vendor_type_label")%>
+	</div>
+	<%= select_tag(:vendor_type, options_for_select([['Restaurants'], ['Bars'], ['Food'], ['Places']]), :class => "styled-select")%>
+	<div class="label">
+		<%= label_tag(:address, "Near:", :id => "address_label")%>
+	</div>
+	<%= text_field_tag(:address,value = nil , :placeholder => "ex: 2300 Greenhill dr Round Rock") %>
+	<%= submit_tag("Spot It!", id: "main_search_submit") %>
+	<% end %>
+
+</div>
+<div id="results">
+
+</div>
+<div id="map">
+  <div id="map-canvas"></div>
+</div>
