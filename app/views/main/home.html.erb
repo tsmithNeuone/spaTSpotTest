@@ -1,19 +1,20 @@
 <%= stylesheet_link_tag    "main", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "main", "data-turbolinks-track" => true %>
 <div id="splash_logo_tru" class="splash_logo">
 	<%= image_tag("truspot_center_logo_large.png", id: "large_logo")%>
 </div>
 <div id="center_search_fields">
 
 	<%= form_tag("search", :id=> "main_search", :url => results_path, :method => "get") do %>
-		<div id="category_fields" class="form_fields">
-			<%= image_tag("category_label.png", id: "category_label")%>
-			<%= select_tag(:vendor_type, options_for_select([['Restaurants'], ['Bars'], ['Food'], ['Places']]), :class => "styled_form_element")%>
-		</div>
-		<div id="near_fields" class="form_fields">
-			<%= image_tag("near_label.png", id: "near_label")%>
-			<%= text_field_tag(:address,value = nil , :placeholder => "ex: 2300 Greenhill dr Round Rock", :class => "styled_form_element") %>
-		</div>
-		<%= image_submit_tag("spot_it_button.png", id: "search_submit") %>
+	<div id="category_fields" class="form_fields">
+		<%= image_tag("category_label.png", id: "category_label")%>
+		<%= select_tag(:vendor_type, options_for_select([['Restaurants'], ['Bars'], ['Food'], ['Places']]), :class => "styled_form_element")%>
+	</div>
+	<div id="near_fields" class="form_fields">
+		<%= image_tag("near_label.png", id: "near_label")%>
+		<%= text_field_tag(:address,value = nil , :placeholder => "ex: 2300 Greenhill dr Round Rock", :class => "styled_form_element") %>
+	</div>
+	<%= image_submit_tag("spot_it_button.png", id: "search_submit") %>
 	<% end %>
 
 </div>
