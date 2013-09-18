@@ -1,5 +1,8 @@
 TruSpot2::Application.routes.draw do
-  resources :main
+  get "/main" => "main#home"
+  get "/results" => "results#index"
+  get "search" => "results#index"
+  
   root 'main#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
